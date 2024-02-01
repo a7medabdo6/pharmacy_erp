@@ -30,7 +30,9 @@ use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 
 
 Route::name('api.')->group(function () {
-
+    Route::get("/test", function () {
+        return "test";
+    });
     Route::post('/tenant', [TenantController::class, 'create']);
 
     Route::middleware(['tenant'])->group(function () {
